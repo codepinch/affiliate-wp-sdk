@@ -1,0 +1,35 @@
+<?php if (defined('ABSPATH')) { ?>
+    <div class="wrap">
+        <div class="row">
+            <div class="col-xs-12 col-md-8">
+                <div class="metabox-holder">
+                    <div class="postbox">
+                        <h3 class="hndle">
+                            <span><?php echo __('CodePinch Affiliate Sample Page'); ?></span>
+                        </h3>
+                        <div class="inside">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis risus elit. Mauris sit amet maximus mi. Cras tincidunt accumsan dui sagittis porttitor. Vestibulum augue purus, congue quis rhoncus vel, vestibulum sit amet turpis. In imperdiet varius urna, sed suscipit eros efficitur in. Suspendisse sit amet magna id lacus laoreet suscipit ut sit amet sapien. Mauris mollis vitae dolor non pharetra. Donec quis augue scelerisque, mollis purus quis, convallis ex.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-4">
+                <?php if (CodePinch_Affiliate::isInstalled() === false) { ?>
+                <div class="metabox-holder">
+                    <div class="postbox">
+                        <div class="inside text-center">
+                            <div class="inner-sm">
+                                <p class="text-muted text-larger"><?php echo sprintf('Keep your website error-free with our CodePinch plugin <small>(%sread more%s)</small>', '<a href="https://wordpress.org/plugins/wp-error-fix/" target="-blank">', '</a>'); ?></p>
+                                <a href="<?php echo CodePinch_Affiliate::getUrl(AFFILIATE_SAMPLE_CODE); ?>" class="btn btn-lg btn-warning">
+                                    <img src="http://codepinch.io/frontend/img/codepinch-icon.svg" /> Install CodePinch
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+<?php }
