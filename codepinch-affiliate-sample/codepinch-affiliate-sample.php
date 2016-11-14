@@ -40,10 +40,8 @@ class CodePinchAffiliateSample {
     protected function __construct() {
         if (is_admin()) {
             if (is_multisite() && is_network_admin()) {
-                add_action('network_admin_notices', array($this, 'notification'));
                 add_action('network_admin_menu', array($this, 'adminMenu'));
             } elseif (!is_multisite()) {
-                add_action('admin_notices', array($this, 'notification'));
                 add_action('admin_menu', array($this, 'adminMenu'));
             }
             
@@ -51,29 +49,7 @@ class CodePinchAffiliateSample {
             add_action('admin_print_styles', array($this, 'printStylesheet'));
             
             //initialize CodePinch affiliate
-            CodePinch_Affiliate::boostrap();
-        }
-    }
-    
-    /**
-     * Dashboard notification
-     * 
-     * Show "Install CodePinch Plugin" notification but only when it is actually
-     * not installed.
-     * 
-     * @return void
-     * 
-     * @access public
-     */
-    public function notification() {
-        if (!CodePinch_Affiliate::isInstalled() && !CodePinch_Affiliate::isPageUI()) {
-            $style = 'padding: 10px; font-weight: 700; letter-spacing:0.5px;';
-            $url   = CodePinch_Affiliate::getUrl(AFFILIATE_SAMPLE_CODE);
-            
-            echo '<div class="updated notice"><p style="' . $style . '">';
-            echo 'Improve your website performance and security. ';
-            echo '<a href="' . $url . '">Install CodePinch Plugin.</a>';
-            echo '</p></div>';
+            CodePinch_Affiliate::bootstrap();
         }
     }
     
@@ -125,7 +101,7 @@ class CodePinchAffiliateSample {
             );
         }
     }
-
+    
     /**
      * Initialize the CodePinchAffiliateSample plugin
      *
