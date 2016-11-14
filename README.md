@@ -9,5 +9,4 @@ View bullet-point:
 - CodePinch SDK has to be bootstrapped during WordPress initialization to register backend installation page;
 - Each affiliate has unique code that is used to generate the affiliate link;
 - Do not show "Install CodePinch" link if plugin is already installed. Use  CodePinch_Affiliate::isInstalled() to check the status;
-- Do not show "Install CodePinch" link if current user is not allowed to install or activate plugins. User CodePinch_Affiliate::isAllowed() to check user permissions;
 - In order to generate the affiliate link use CodePinch_Affiliate::getUrl('Your Affiliate Code').
